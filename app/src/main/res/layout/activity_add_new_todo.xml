@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewTodoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add New Todo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/newTodo"
+        android:layout_marginStart="20dp"
+        android:textSize="22sp"
+        android:textColor="@color/orange"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/baseline_bookmark_add_24"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/SaveTodo"
+        android:layout_marginEnd="50dp"
+        android:layout_alignParentTop="true"/>
+
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:id="@+id/deleteNote"
+        android:layout_toStartOf="@+id/SaveTodo"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/baseline_delete_24"/>
+
+
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_toStartOf="@+id/deleteNote"
+        android:src="@drawable/baseline_autorenew_24"
+        android:layout_marginTop="20dp"
+        android:id="@+id/updateTodo"
+        android:visibility="gone"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentTop="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:paddingHorizontal="12dp"
+        android:id="@+id/isCompleted"
+        android:textSize="20sp"
+        android:textColor="@color/orange"
+        android:paddingVertical="8dp"
+        android:layout_below="@+id/newTodo"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:paddingHorizontal="12dp"
+        android:id="@+id/dummy_text_2"
+        android:textSize="20sp"
+        android:text="Todo Completed ? "
+        android:textColor="@color/black"
+        android:gravity="left|center_vertical"
+        android:paddingVertical="8dp"
+        android:layout_below="@+id/newTodo"
+        android:layout_marginEnd="20dp"
+        android:layout_toRightOf="@+id/isCompleted"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/isCompleted"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/text_background"
+        android:textColor="@color/orange"
+        android:textSize="20sp"
+        android:id="@+id/desc"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:hint="Enter Your Todo"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:layout_marginBottom="20dp"/>
+
+</RelativeLayout>
