@@ -1,17 +1,11 @@
 package com.example.notesapp.domain.repositories
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.util.Log
 import com.example.notesapp.Application
 import com.example.notesapp.data.API.ApiInterface
 import com.example.notesapp.data.API.RetrofitClass
 import com.example.notesapp.domain.model.Notes
 import io.realm.kotlin.UpdatePolicy
 import io.realm.kotlin.ext.query
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import java.io.IOException
 
@@ -27,7 +21,6 @@ class NotesRepository {
                 completed = isCompleted
                 _userId = userId
             }
-            Log.d("notesfromserver", "saveNotes: saved notes")
             copyToRealm(note, UpdatePolicy.ALL)
         }
     }
@@ -39,8 +32,8 @@ class NotesRepository {
             result.list.toList()
         }
 
-    private fun checkForAlreadyData() : Boolean{
-        val isData= realm.query<Notes>().find()
+    private fun checkForAlreadyData(): Boolean {
+        val isData = realm.query<Notes>().find()
         return isData.isEmpty()
     }
 
@@ -51,7 +44,6 @@ class NotesRepository {
             try {
                 val result = notesApiResult.getNotes()
                 if (!result.isJsonNull) {
-                    Log.d("notesfromserver", "fetchNotesFromServer: -> " + result.asJsonObject)
                     if (result.isJsonObject) {
                         val todos = result.getAsJsonArray("todos")
                         if (todos.isJsonArray) {

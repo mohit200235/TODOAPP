@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.notesapp.data.Network.NetworkUtils
 import com.example.notesapp.databinding.ActivityAddNewTodoBinding
@@ -24,7 +25,7 @@ class AddNewTodoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //register viewmodel
-        viewModel = UpdateViewModel()
+        viewModel = ViewModelProvider(this)[UpdateViewModel::class.java]
 
         val getIntentNotesId = intent.extras
 

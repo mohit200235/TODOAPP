@@ -9,8 +9,8 @@ import io.realm.kotlin.migration.RealmMigration
 
 class Application : Application() {
 
-    companion object{
-        lateinit var realm:Realm
+    companion object {
+        lateinit var realm: Realm
     }
 
     override fun onCreate() {
